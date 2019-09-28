@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "857709734636",
+    "firebase_url": "https://neurohack-1f6c0.firebaseio.com",
+    "project_id": "neurohack-1f6c0",
+    "storage_bucket": "neurohack-1f6c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857709734636:android:6a2895368dbadc26c513c9",
+        "android_client_info": {
+          "package_name": "com.hackatrix.neurohack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857709734636-narhrsl5g576m6rq9cns8rnsmc1e7219.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackatrix.neurohack",
+            "certificate_hash": "4482b9bf63d4b884ee6b06fa7d5cff420379eb6f"
+          }
+        },
+        {
+          "client_id": "857709734636-asriaebhunnejvu9tahvl0rg9gdi10n2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpPLtxfKA0RjLjL0oUUizZXhiqQ4jLDzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857709734636-asriaebhunnejvu9tahvl0rg9gdi10n2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
