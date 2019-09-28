@@ -6,6 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Entrenamiento</title>
 
+    <script type="text/javascript">
+	    // integración telegram
+		var protocolo = "https://",
+		    urlNotificacion = protocolo + "api.telegram.org/" +
+		                            "bot877810102:AAH7gtVUj2_8Spk9EXMQLtSh3zWJvj8u7N4/" + //API token
+		                            "SendMessage?chat_id=7455490&text=";
+
+		function enviarNotificacion(mensaje){
+		      var xmlHttp = new XMLHttpRequest();
+		      xmlHttp.open("GET", urlNotificacion + mensaje, false);
+		      xmlHttp.send( null );
+		  }
+    </script>
+    
     <script src="dist/build.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">

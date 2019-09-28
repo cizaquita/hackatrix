@@ -27,6 +27,20 @@ const TOPK = 10;
 
 class Main {
   constructor() {
+
+    // integración firebase
+    /*var firebase = require('firebase');
+    var request = require('request');
+
+    var API_KEY = "AAAAx7N76uw:APA91bGsNaZKCXoR_cSqIwZZ9HYE72mFlj24_GHOdS3mofcgtLrox6orFHgP0_ti5boyYXWQQijXqs9fDJHDZYUo6luoIfdD8zm2iJaJfBLRkEmD_xDHZhGp8-2-L9U5NJfBmH96MmFh";
+
+    firebase.initializeApp({
+      serviceAccount: "account.json",
+      databaseURL: "FIREBASE_DATABASE_URL"
+    });
+    ref = firebase.database().ref();
+*/
+
     // Initiate variables
     this.infoTexts = [];
     this.logPanel = document.createElement('p');
@@ -103,12 +117,7 @@ class Main {
         this.video.addEventListener('paused', () => this.videoPlaying = false);
       })
 
-
-
     // Create LOG panel
-
-
-
   }
 
   async bindPage() {
@@ -130,6 +139,32 @@ class Main {
     this.video.pause();
     cancelAnimationFrame(this.timer);
   }
+
+
+/*
+  sendNotificationToUser(userId, message, onSuccess) {
+    request({
+      url: 'https://fcm.googleapis.com/fcm/send',
+      method: 'POST',
+      headers: {
+        'Content-Type': ' application/json',
+        'Authorization': 'key=' + API_KEY
+      },
+      body: JSON.stringify({
+        notification: {
+          title: message
+        },
+        to: '/topics/user_' + userId
+      })
+    }, function(error, response, body) {
+      if (response.statusCode >= 400) {
+        console.error('HTTP Error: ' + response.statusCode + ' - ' + response.statusMessage);
+      } else {
+        onSuccess();
+      }
+    });
+  }
+*/
 
   async animate() {
     if (this.videoPlaying) {
@@ -172,32 +207,37 @@ class Main {
             this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}%`
           }
           // Do something bro, cuando haya coincidencia
-          if (res.confidences[i] * 100 > 95) {
+          if (res.confidences[i] * 100 > 98) {
             this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% - COINCIDENCIA!`
             
             if (i == 0){
-              this.logPanel.innerText = "Necesidad Fisiológica registrada.";
+              //this.logPanel.innerText = "Necesidad Fisiológica registrada.";
               setTimeout(function(){
-                this.logPanel.innerText = "";
+                //this.logPanel.innerText = "";
+                console.log("Necesidad Fisiológica registrada.")
+                this.enviarNotificacion("Necesidad Fisiológica registrada.");
               }, 3000);
             }
             else if (i == 1){
 
-              this.logPanel.innerText = "Seguridad Física registrada.";
+              //this.logPanel.innerText = "Seguridad Física registrada.";
               setTimeout(function(){
-                this.logPanel.innerText = "";
+                //this.logPanel.innerText = "";
+                this.enviarNotificacion("Seguridad Física registrada.");
               }, 3000);
             }
             else if (i == 2){
-              this.logPanel.innerText = "Llamada a Familiares registrada.";
+              //this.logPanel.innerText = "Llamada a Familiares registrada.";
               setTimeout(function(){
-                this.logPanel.innerText = "";
+                //this.logPanel.innerText = "";
+                this.enviarNotificacion("Llamada a Familiares registrada.");
               }, 3000);
             }
             else if (i == 3){
-              this.logPanel.innerText = "Asistencia Médica registrada.";
+              //this.logPanel.innerText = "Asistencia Médica registrada.";
               setTimeout(function(){
-                this.logPanel.innerText = "";
+                //this.logPanel.innerText = "Asistencia Médica registrada.";
+                this.enviarNotificacion("Asistencia Médica registrada.");
               }, 3000);
             }
             
@@ -225,6 +265,8 @@ class Main {
     }
     this.timer = requestAnimationFrame(this.animate.bind(this));
   }
+
+
 }
 
 window.addEventListener('load', () => new Main());
