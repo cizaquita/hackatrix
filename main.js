@@ -20,7 +20,7 @@ import * as knnClassifier from '@tensorflow-models/knn-classifier';
 // Number of classes to classify
 const NUM_CLASSES = 5;
 // Webcam Image size. Must be 227. 
-const IMAGE_SIZE = 227;
+const IMAGE_SIZE = 400;
 // K value for KNN
 const TOPK = 10;
 
@@ -204,17 +204,17 @@ class Main {
 
           // Update info text
           if (exampleCount[i] > 0) {
-            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}%`
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% `;
           }
           // Do something bro, cuando haya coincidencia
           if (res.confidences[i] * 100 > 98) {
-            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% - COINCIDENCIA!`
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% - COINCIDENCIA! `;
             
             if (i == 0){
               //this.logPanel.innerText = "Necesidad Fisiológica registrada.";
               setTimeout(function(){
                 //this.logPanel.innerText = "";
-                console.log("Necesidad Fisiológica registrada.")
+                //console.log("Necesidad Fisiológica registrada.")
                 this.enviarNotificacion("Necesidad Fisiológica registrada.");
               }, 3000);
             }
