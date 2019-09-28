@@ -29,6 +29,7 @@ class Main {
   constructor() {
     // Initiate variables
     this.infoTexts = [];
+    this.logPanel = document.createElement('p');
     this.training = -1; // -1 when no class is being trained
     this.videoPlaying = false;
 
@@ -51,7 +52,24 @@ class Main {
 
       // Create training button
       const button = document.createElement('button')
-      button.innerText = "Entrenar " + i;
+
+      // Crear botones de entrenamiento personalizaos
+      // 
+      const indicadorBoton = i+1;
+      if (i == 0)
+        button.innerText = "(" + indicadorBoton + ") Necesidad Fisiológica";
+      else if (i == 1)
+        button.innerText = "(" + indicadorBoton + ") Seguridad Física";
+      else if (i == 2)
+        button.innerText = "(" + indicadorBoton + ") Llamada a Familiares";
+      else if (i == 3)
+        button.innerText = "(" + indicadorBoton + ") Asistencia Médica";
+      else
+        button.innerText = "Entrenar Posición normal del paciente.";
+
+      button.className = "btn-info";
+
+
       div.appendChild(button);
 
       // Listen for mouse events when clicking the button
@@ -60,11 +78,19 @@ class Main {
 
       // Create info text
       const infoText = document.createElement('span')
-      infoText.innerText = " No hay ejemplos.";
+      infoText.innerText = " No hay entrenamiento.";
       div.appendChild(infoText);
       this.infoTexts.push(infoText);
+
     }
 
+    // LOG PANEL
+    const divLog = document.createElement('div');
+    this.logPanel = document.createElement('p');
+    document.body.appendChild(divLog);
+    divLog.style.marginBottom = '10px';
+
+    divLog.appendChild(this.logPanel);
 
     // Setup webcam
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -76,6 +102,13 @@ class Main {
         this.video.addEventListener('playing', () => this.videoPlaying = true);
         this.video.addEventListener('paused', () => this.videoPlaying = false);
       })
+
+
+
+    // Create LOG panel
+
+
+
   }
 
   async bindPage() {
@@ -136,16 +169,54 @@ class Main {
 
           // Update info text
           if (exampleCount[i] > 0) {
-            this.infoTexts[i].innerText = ` ${exampleCount[i]} ejemplos - ${res.confidences[i] * 100}%`
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}%`
           }
-          // Do something bro
-          if (res.confidences[i] * 100 > 90) {
-            this.infoTexts[i].innerText = ` ${exampleCount[i]} ejemplos - ${res.confidences[i] * 100}% - COINCIDENCIA!`
-            console.log('Se ha encontrado una coincidencia!');
+          // Do something bro, cuando haya coincidencia
+          if (res.confidences[i] * 100 > 95) {
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% - COINCIDENCIA!`
+            
+            if (i == 0){
+              this.logPanel.innerText = "Necesidad Fisiológica registrada.";
+              setTimeout(function(){
+                this.logPanel.innerText = "";
+              }, 3000);
+            }
+            else if (i == 1){
+
+              this.logPanel.innerText = "Seguridad Física registrada.";
+              setTimeout(function(){
+                this.logPanel.innerText = "";
+              }, 3000);
+            }
+            else if (i == 2){
+              this.logPanel.innerText = "Llamada a Familiares registrada.";
+              setTimeout(function(){
+                this.logPanel.innerText = "";
+              }, 3000);
+            }
+            else if (i == 3){
+              this.logPanel.innerText = "Asistencia Médica registrada.";
+              setTimeout(function(){
+                this.logPanel.innerText = "";
+              }, 3000);
+            }
+            
+            //console.log('Se ha encontrado una coincidencia!');
           }
+          // Acción botón uno
+          /*if (res.confidences[i] * 100 > 90) {
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}!`
+            //console.log('Se ha encontrado una coincidencia!');
+          }*/
+
+          // acciones de la clase en un determinado tiempo
+          /*while (res.confidences[0] * 100 > 90){
+            setTimeout(function(){
+              alert("hey"); 
+            }, 3000);
+          }*/
         }
       }
-
       // Dispose image when done
       image.dispose();
       if (logits != null) {
