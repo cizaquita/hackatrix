@@ -82,9 +82,9 @@ class Main {
         button.innerText = "Entrenar Posición normal del paciente.";
 
       button.className = "btn-info";
-
-
       div.appendChild(button);
+
+
 
       // Listen for mouse events when clicking the button
       button.addEventListener('mousedown', () => this.training = i);
@@ -99,16 +99,18 @@ class Main {
     }
 
     // LOG PANEL
+    /*
     const divLog = document.createElement('div');
     this.logPanel = document.createElement('p');
     document.body.appendChild(divLog);
     divLog.style.marginBottom = '10px';
-
     divLog.appendChild(this.logPanel);
+    */
 
     // Setup webcam
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
       .then((stream) => {
+        console.log(stream);
         this.video.srcObject = stream;
         this.video.width = IMAGE_SIZE;
         this.video.height = IMAGE_SIZE;
@@ -189,7 +191,7 @@ class Main {
         // If classes have been added run predict
         logits = infer();
         const res = await this.knn.predictClass(logits, TOPK);
-
+        var contadorEnvios = 0;
         for (let i = 0; i < NUM_CLASSES; i++) {
 
           // The number of examples for each class
@@ -204,19 +206,18 @@ class Main {
 
           // Update info text
           if (exampleCount[i] > 0) {
-            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% `;
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100} % `;
           }
           // Do something bro, cuando haya coincidencia
           if (res.confidences[i] * 100 > 98) {
-            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100}% - COINCIDENCIA! `;
+            this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100} % - COINCIDENCIA! `;
             
-            if (i == 0){
+            if (i == 0 && contadorEnvios < 2 ){
               //this.logPanel.innerText = "Necesidad Fisiológica registrada.";
               setTimeout(function(){
-                //this.logPanel.innerText = "";
-                //console.log("Necesidad Fisiológica registrada.")
                 this.enviarNotificacion("Necesidad Fisiológica registrada.");
-              }, 3000);
+              },3000);
+              contadorEnvios++;
             }
             else if (i == 1){
 
@@ -239,7 +240,8 @@ class Main {
                 //this.logPanel.innerText = "Asistencia Médica registrada.";
                 this.enviarNotificacion("Asistencia Médica registrada.");
               }, 3000);
-            }
+            }else
+              contadorEnvios = 0;
             
             //console.log('Se ha encontrado una coincidencia!');
           }
