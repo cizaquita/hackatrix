@@ -24,7 +24,13 @@ const IMAGE_SIZE = 400;
 // K value for KNN
 const TOPK = 10;
 
+//telegram integration
+/*var telegram = require('telegram-bot-api');
 
+var api = new telegram({
+        token: '777046284:AAFrnadbp1dlyblYrlhSnJ-n4Q8Vh9pikxA'
+});
+*/
 class Main {
   constructor() {
 
@@ -54,6 +60,7 @@ class Main {
     this.video = document.createElement('video');
     this.video.setAttribute('autoplay', '');
     this.video.setAttribute('playsinline', '');
+    this.video.classList.add("centerVideo");
 
     // Add video element to DOM
     document.body.appendChild(this.video);
@@ -118,10 +125,7 @@ class Main {
         this.video.addEventListener('playing', () => this.videoPlaying = true);
         this.video.addEventListener('paused', () => this.videoPlaying = false);
       })
-
-    // Create LOG panel
   }
-
   async bindPage() {
     this.knn = knnClassifier.create();
     this.mobilenet = await mobilenetModule.load();
@@ -209,39 +213,42 @@ class Main {
             this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100} % `;
           }
           // Do something bro, cuando haya coincidencia
-          if (res.confidences[i] * 100 > 98) {
+          if (res.confidences[i] * 100 > 98 && this.training == -1) {
             this.infoTexts[i].innerText = ` ${exampleCount[i]} entrenamientos cargados - ${res.confidences[i] * 100} % - COINCIDENCIA! `;
-            
+
             if (i == 0 && contadorEnvios < 2 ){
               //this.logPanel.innerText = "Necesidad Fisiológica registrada.";
               setTimeout(function(){
                 this.enviarNotificacion("Necesidad Fisiológica registrada.");
-              },3000);
-              contadorEnvios++;
+                cancelAnimationFrame(this.timer);
+                //this.logPanel.innerText = "";
+              }, 3000);
             }
-            else if (i == 1){
+            else if (i == 1 && contadorEnvios < 2 ){
 
               //this.logPanel.innerText = "Seguridad Física registrada.";
               setTimeout(function(){
-                //this.logPanel.innerText = "";
                 this.enviarNotificacion("Seguridad Física registrada.");
+                cancelAnimationFrame(this.timer);
+                //this.logPanel.innerText = "";
               }, 3000);
             }
-            else if (i == 2){
+            else if (i == 2 && contadorEnvios < 2 ){
               //this.logPanel.innerText = "Llamada a Familiares registrada.";
               setTimeout(function(){
                 //this.logPanel.innerText = "";
                 this.enviarNotificacion("Llamada a Familiares registrada.");
-              }, 3000);
+              }, 4000);
             }
-            else if (i == 3){
+            else if (i == 3 && contadorEnvios < 2){
               //this.logPanel.innerText = "Asistencia Médica registrada.";
               setTimeout(function(){
                 //this.logPanel.innerText = "Asistencia Médica registrada.";
                 this.enviarNotificacion("Asistencia Médica registrada.");
-              }, 3000);
+              }, 4000);
             }else
               contadorEnvios = 0;
+              
             
             //console.log('Se ha encontrado una coincidencia!');
           }
@@ -267,8 +274,6 @@ class Main {
     }
     this.timer = requestAnimationFrame(this.animate.bind(this));
   }
-
-
 }
 
 window.addEventListener('load', () => new Main());

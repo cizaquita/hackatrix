@@ -90,7 +90,6 @@ var Main = function () {
       if (i == 0) button.innerText = "(" + indicadorBoton + ") Necesidad Fisiológica";else if (i == 1) button.innerText = "(" + indicadorBoton + ") Seguridad Física";else if (i == 2) button.innerText = "(" + indicadorBoton + ") Llamada a Familiares";else if (i == 3) button.innerText = "(" + indicadorBoton + ") Asistencia Médica";else button.innerText = "Entrenar Posición normal del paciente.";
 
       button.className = "btn-info";
-
       div.appendChild(button);
 
       // Listen for mouse events when clicking the button
@@ -113,15 +112,17 @@ var Main = function () {
     }
 
     // LOG PANEL
-    var divLog = document.createElement('div');
+    /*
+    const divLog = document.createElement('div');
     this.logPanel = document.createElement('p');
     document.body.appendChild(divLog);
     divLog.style.marginBottom = '10px';
-
     divLog.appendChild(this.logPanel);
+    */
 
     // Setup webcam
     navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(function (stream) {
+      console.log(stream);
       _this.video.srcObject = stream;
       _this.video.width = IMAGE_SIZE;
       _this.video.height = IMAGE_SIZE;
@@ -207,13 +208,13 @@ var Main = function () {
     value: function animate() {
       var _this2 = this;
 
-      var image, logits, infer, numClasses, res, i, exampleCount;
+      var image, logits, infer, numClasses, res, contadorEnvios, i, exampleCount;
       return regeneratorRuntime.async(function animate$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               if (!this.videoPlaying) {
-                _context2.next = 14;
+                _context2.next = 15;
                 break;
               }
 
@@ -239,7 +240,7 @@ var Main = function () {
               numClasses = this.knn.getNumClasses();
 
               if (!(numClasses > 0)) {
-                _context2.next = 12;
+                _context2.next = 13;
                 break;
               }
 
@@ -250,7 +251,7 @@ var Main = function () {
 
             case 10:
               res = _context2.sent;
-
+              contadorEnvios = 0;
 
               for (i = 0; i < NUM_CLASSES; i++) {
 
@@ -267,19 +268,18 @@ var Main = function () {
 
                 // Update info text
                 if (exampleCount[i] > 0) {
-                  this.infoTexts[i].innerText = ' ' + exampleCount[i] + ' entrenamientos cargados - ' + res.confidences[i] * 100 + '% ';
+                  this.infoTexts[i].innerText = ' ' + exampleCount[i] + ' entrenamientos cargados - ' + res.confidences[i] * 100 + ' % ';
                 }
                 // Do something bro, cuando haya coincidencia
                 if (res.confidences[i] * 100 > 98) {
-                  this.infoTexts[i].innerText = ' ' + exampleCount[i] + ' entrenamientos cargados - ' + res.confidences[i] * 100 + '% - COINCIDENCIA! ';
+                  this.infoTexts[i].innerText = ' ' + exampleCount[i] + ' entrenamientos cargados - ' + res.confidences[i] * 100 + ' % - COINCIDENCIA! ';
 
-                  if (i == 0) {
+                  if (i == 0 && contadorEnvios < 2) {
                     //this.logPanel.innerText = "Necesidad Fisiológica registrada.";
                     setTimeout(function () {
-                      //this.logPanel.innerText = "";
-                      //console.log("Necesidad Fisiológica registrada.")
                       this.enviarNotificacion("Necesidad Fisiológica registrada.");
                     }, 3000);
+                    contadorEnvios++;
                   } else if (i == 1) {
 
                     //this.logPanel.innerText = "Seguridad Física registrada.";
@@ -299,7 +299,7 @@ var Main = function () {
                       //this.logPanel.innerText = "Asistencia Médica registrada.";
                       this.enviarNotificacion("Asistencia Médica registrada.");
                     }, 3000);
-                  }
+                  } else contadorEnvios = 0;
 
                   //console.log('Se ha encontrado una coincidencia!');
                 }
@@ -317,17 +317,17 @@ var Main = function () {
                 }*/
               }
 
-            case 12:
+            case 13:
               // Dispose image when done
               image.dispose();
               if (logits != null) {
                 logits.dispose();
               }
 
-            case 14:
+            case 15:
               this.timer = requestAnimationFrame(this.animate.bind(this));
 
-            case 15:
+            case 16:
             case 'end':
               return _context2.stop();
           }
