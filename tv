@@ -1,0 +1,94 @@
+#EXTM3U
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁳󠁱󠁬󠁩󠁿󠁶‍",Visita: rentry.co/nopaltv
+http://free.fullspeed.tv/iptv-query?streaming-ip=https://youtube.com/c/LofiGirl/live
+
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁮󠁬󠁷‌󠁲󠁮󠁪",Azteca 7 (Tijuana, Baja California) [MyBTV]
+https://v-sd.mybtv.net/live/502.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁮󠁬󠁷‌󠁲󠁮󠁪",Azteca 7 [???]
+http://us1-external-sources.iptvserver.tv:80/live/kkkrkDp2a9KNwAwGzpb/QT94uK5NNQw4r4Qs/677.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁮󠁬󠁷‌󠁲󠁮󠁪",Azteca 7 [???2]
+http://142.44.210.132:25461/T3XgaLFVJb/cWNfRm6qAP/54?token=HhFfA0ZZGghHUlMGUFJVVwVVUAANClFUCQRRBVoHVFQHBgRaA1cJClcUTxQWFRNUAAltC1AbDQIMTkMWEFETagxXFVgXAwgARxpBQgwMBBNbVQRUDAABBg1QU09BRAhRRwkVVAcGCxBJFAZOEQQTXwAIbQZRT15UXUBbDRZYDRlHXFk9UVRVUwtSQQxHUUMdQw1BEhYDWUJUDk1BAV0VRwRHUkAPEwkGUAFBGkcCDkQPEEAbFgMVemBATUEGTBVQC0BeDVsTAhARRUEaRwgSbhMBQRZGXFZaXRBDWUEEQxlHXlYaalJXXAtTAEIMDg9CQ14QUhYVFVpXDAgXDEY+RQxXFVgXAggGUAFBSw==
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁸󠁫󠁥󠁿󠁴󠁰󠁺",Canal 5 [ViX]
+https://linear-351.frequency.stream/dist/vix/351/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁸󠁫󠁥󠁿󠁴󠁰󠁺",Canal 5 (Tijuana, Baja California) [MyBTV]
+https://v-sd.mybtv.net/live/486.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",Caracol (Colombia) [???]
+http://200.52.154.125:8000/play/a06e/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",Chilevisión (Chile) [???]
+http://170.79.235.29:8000/play/066
+#EXTINF:0 group-title="⚽ Qatar 2022",Chilevisión (Chile) [???2]
+http://45.232.211.196:1080/play/a04d
+#EXTINF:0 group-title="⚽ Qatar 2022",DirecTV Sports [???]
+http://ui.mrzutv.net:80/live/radhames/5591/365.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",DirecTV Sports [???2]
+http://quality-restream.com:8080/GenIptvLast/FaP6YswK77NaOPOF/67721
+#EXTINF:0 group-title="⚽ Qatar 2022",DirecTV Sports [???3]
+http://quality-restream.com:8080/GenIptvLast/FaP6YswK77NaOPOF/290379
+#EXTINF:0 group-title="⚽ Qatar 2022",DirecTV Sports 2 [???]
+http://200.52.154.125:8000/play/a06o/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",DirecTV Sports + [???]
+http://line.powerdino.com/4375a1dd43/649f75a876/628275
+#EXTINF:0 group-title="⚽ Qatar 2022",DirecTV Sports + [???2]
+http://200.52.154.125:8000/play/a06p/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",El 13 (Chile) [???]
+http://170.79.235.29:8000/play/067
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁡󠁯󠁹󠁹󠁿󠁷‍",Las Estrellas [ViX]
+https://linear-413.frequency.stream/dist/vix/413/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁡󠁯󠁹󠁹󠁿󠁷‍",Las Estrellas [???]
+https://channel01.akamaized.net/hls/live/2022749/event01/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁡󠁯󠁹󠁹󠁿󠁷‍",Las Estrellas (Tijuana, Baja California) [MyBTV]
+https://v-sd.mybtv.net/live/530.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",Latina (Perú) [???]
+http://stalkertvlatinopanel.com:8080/play/T5OL6xfb8POgPGZYkO4iMzQX1mkZGzsSh4JxCbwlBfU
+#EXTINF:0 group-title="⚽ Qatar 2022",Latina (Perú) [???2]
+http://190.187.247.206:8000/play/a03f/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁫󠁫󠁴󠁳󠁩󠁱󠁳",Telemundo (Indianápolis) [MyBTV]
+https://v-in.mybtv.net/live/984.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁫󠁫󠁴󠁳󠁩󠁱󠁳",Telemundo (Los Angeles) [MyBTV]
+https://v-la.mybtv.net/live/267.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁫󠁫󠁴󠁳󠁩󠁱󠁳",Telemundo (Nueva York) [MyBTV]
+https://v-ny.mybtv.net/live/659.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁫󠁫󠁴󠁳󠁩󠁱󠁳",Telemundo (Phoenix) [MyBTV]
+https://v-px.mybtv.net/live/39.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁫󠁫󠁴󠁳󠁩󠁱󠁳",Telemundo (San Francisco) [MyBTV]
+https://v-ca.mybtv.net/live/140.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁫󠁫󠁴󠁳󠁩󠁱󠁳",Telemundo [???]
+http://71.187.29.54:8000/play/a07a/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",Telemundo [???2]
+http://us1-external-sources.iptvserver.tv:80/live/kkkrkDp2a9KNwAwGzpb/QT94uK5NNQw4r4Qs/657.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",Tigo Sports [???]
+http://190.61.102.67:8000/play/a05x
+#EXTINF:0 group-title="⚽ Qatar 2022",Tigo Sports [???]
+http://200.52.154.125:8000/play/a06s/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",TNT Sports
+http://200.52.154.125:8000/play/a06g/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁰󠁢󠁥󠁫󠁥󠁴󠁰",TUDN [ViX]
+https://linear-347.frequency.stream/dist/vix/347/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",TV Pública (Argentina) [???]
+http://quality-restream.com:8080/GenIptvLast/FaP6YswK77NaOPOF/296503
+#EXTINF:0 group-title="⚽ Qatar 2022",TyC Sports [???]
+https://d3awnlgqz0szay.cloudfront.net/out/v1/b841c366cbe540e6a106c3ba83e5c8d6/index.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022",Universo [???]
+http://us1-external-sources.iptvserver.tv:80/live/kkkrkDp2a9KNwAwGzpb/QT94uK5NNQw4r4Qs/665.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 1
+https://linear-360.frequency.stream/dist/vix/360/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 2
+https://linear-361.frequency.stream/dist/vix/361/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 3
+https://linear-362.frequency.stream/dist/vix/362/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 4
+https://linear-439.frequency.stream/dist/vix/439/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 5
+https://linear-441.frequency.stream/dist/vix/441/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 6
+https://linear-442.frequency.stream/dist/vix/442/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 7
+https://linear-489.frequency.stream/dist/vix/489/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 8
+https://linear-490.frequency.stream/dist/vix/490/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 9
+https://linear-506.frequency.stream/dist/vix/506/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁲󠁤󠁰󠁶󠁳󠁴󠁴",ViX 10
+https://linear-507.frequency.stream/dist/vix/507/hls/master/playlist.m3u8
+#EXTINF:0 group-title="⚽ Qatar 2022" tvg-logo="https://zws.im/󠁹󠁹󠁤‌󠁮󠁬󠁪",Zona TUDN [ViX]
+https://linear-356.frequency.stream/dist/vix/356/hls/master/playlist.m3u8
